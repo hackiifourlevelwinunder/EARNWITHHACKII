@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="card">
+  <h2 id="status" class="loading">Data Connecting...</h2>
+</div>
+
+<script>
+let steps = ["Data Connecting...", "Server Connecting...", "Done ✅"];
+let i = 0;
+
+function run(){
+  if(i < steps.length){
+    document.getElementById("status").innerText = steps[i];
+    i++;
+    setTimeout(run, 1200);
+  } else {
+    setTimeout(()=>{
+      document.body.innerHTML += '<div class="card"><button onclick="go()">JAI CLUB ACTIVE</button></div>';
+    },500);
+  }
+}
+run();
+
+function go(){
+  window.location.href="dashboard.html";
+}
+</script>
+
+</body>
+</html>
